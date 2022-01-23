@@ -21,11 +21,17 @@ export const CryptoAdder = ({addCoin}) => {
     async function handleAddCoin(){
         try {
             const response = await getCoinPrice(input);
+            if (!response.ok) {
+                let err = new Error(`HTTP status code: ${response.status}`)
+                const message = await response.json();
+                err.message = `Message from the API: \n ${message.errors[0].message}`;
+                throw err;
+            }
             const json = await response.json();
             const coinObj = transformApiCoinToCoinObj(json.data);
             addCoin(coinObj);
-        } catch(error){
-            console.log(error)
+        } catch(err){
+            alert(err.message)
         }
     }
 

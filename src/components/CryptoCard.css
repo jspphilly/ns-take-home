@@ -5,6 +5,9 @@
     padding: 1rem 0rem;
     justify-content: space-between;
     border-bottom: 1px solid #e7e7e7;
+    background-color: cornsilk;
+    animation: fadeIn 1s ease;
+    animation-fill-mode: forwards;
   }
   
   .cr-card > div {
@@ -38,3 +41,19 @@
   .cr-card-img {
     height: 2rem;
   }
+
+  .cr-change-icons {
+
+  }
+
+
+@keyframes fadeIn {
+    0%{
+        background-color: cornsilk;
+        opacity: 0;
+    }
+    100% {
+        background-color: white;
+        opacity: 1;
+    }
+}
