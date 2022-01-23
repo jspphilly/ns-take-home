@@ -1,25 +1,72 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import List from './components/List';
+import CryptoAdder from './components/CryptoAdder';
+import { getCoinSymbolList, getInitialListData } from "./data/defaultList.js"
+import { getUpdateOnAllCoins, listOfValidCoins } from './services/api';
+import { transformAllValidCoinsToHash, updatePriceOnAllcoins } from './services/transforms';
+import { RefreshButton } from './components/RefreshButton';
+
+
 
 function App() {
+
+  // Initial State
+  // const [allValidCoins, setAllValidCoins] = useState({});
+  const [coinObjList, setCoinObjList] = useState(getInitialListData())
+
+
+  // TODO: routinely update prices, then compare with last price
+  useEffect(() => {
+    async function updateCoinPrices(){
+
+
+    }
+  })
+
+
+
+  // Go get all other values
+  // useEffect(
+  //   // TODO:// add the value to the list, compare
+  //   // and then query for more info
+  // )
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Crypto Tracker
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <main className="cr-main">
+        <div className='cr-toolbar'>
+          <CryptoAdder addCoin={addCoin} ></CryptoAdder>
+          <RefreshButton refreshFunc={refreshList}></RefreshButton>
+        </div>
+        <List coinObjArr={coinObjList}></List>
+      </main >
+       
     </div>
   );
+
+  async function refreshList(){
+    try{
+      const response = await getUpdateOnAllCoins(coinObjList);
+      const updatedCoinPrices = await response.json();
+      setCoinObjList([
+        ...updatePriceOnAllcoins(updatedCoinPrices, coinObjList)
+      ])
+    } catch(error){
+      console.log(error)
+    }
+  }
+
+
+  function addCoin(coin){
+    // TODO: Validate coin
+    setCoinObjList([...coinObjList, coin])
+  }
 }
 
 export default App;

@@ -1,0 +1,17 @@
+
+.cr-refresh-button {
+    background: white;
+    border-radius: 5px;
+    height: 2rem;
+    border-color: #e7e7e7;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cr-refresh-button:hover {
+    background-color: #e7e7e7;
+    cursor: pointer;
+}

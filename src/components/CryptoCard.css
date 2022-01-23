@@ -1,0 +1,40 @@
+.cr-card {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0rem;
+    justify-content: space-between;
+    border-bottom: 1px solid #e7e7e7;
+  }
+  
+  .cr-card > div {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cr-card-id {
+    justify-content: center;
+  }
+
+  .cr-card-name{
+      display: flex;
+      flex-direction: column;
+      margin-left: 20px;
+  }
+
+  .cr-card-symbol-name{
+      font-size: 1.5rem;
+      color: #006db7;
+      font-weight: 600;
+      
+  }
+  
+  .cr-img-wrapper{
+      width: 3rem;
+      display: flex;
+      justify-content: center;
+  }
+
+  .cr-card-img {
+    height: 2rem;
+  }
