@@ -7,7 +7,7 @@
 .cr-list-header{
     display: flex;
     justify-content: space-between;
-
+    user-select: none;
     font-size: 1.5rem;
     font-weight: 700;
     margin-top: 1rem;

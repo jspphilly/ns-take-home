@@ -95,21 +95,22 @@ export const List = ({coinObjArr}) => {
     }
 
     function HeaderRender(header, index)  {
-        if(index) {
-            return (
+        let order = (
+            <>
+                {renderSortState(header.fieldVal)}
+                {header.name} 
+            </>
+        );
+        if(!index) {
+            order = (
                 <>
-                    {renderSortState(header.fieldVal)}
-                    {header.name} 
-                </>
-            )
-        } else {
-            return (
-                <>
                     {header.name} 
                     {renderSortState(header.fieldVal)}
                 </>
-            )
+           )
         } 
+
+        return order;
     }
 }
 

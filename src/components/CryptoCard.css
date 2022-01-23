@@ -8,47 +8,41 @@
     background-color: cornsilk;
     animation: fadeIn 1s ease;
     animation-fill-mode: forwards;
-  }
-  
-  .cr-card > div {
+}
+
+.cr-card>div {
     display: flex;
     align-items: center;
-  }
-  
-  .cr-card-id {
+}
+
+.cr-card-id {
     justify-content: center;
-  }
+}
 
-  .cr-card-name{
-      display: flex;
-      flex-direction: column;
-      margin-left: 20px;
-  }
+.cr-card-name {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
 
-  .cr-card-symbol-name{
-      font-size: 1.5rem;
-      color: #006db7;
-      font-weight: 600;
-      
-  }
-  
-  .cr-img-wrapper{
-      width: 3rem;
-      display: flex;
-      justify-content: center;
-  }
+.cr-card-symbol-name {
+    font-size: 1.5rem;
+    color: #006db7;
+    font-weight: 600;
+}
 
-  .cr-card-img {
+.cr-img-wrapper {
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.cr-card-img {
     height: 2rem;
-  }
-
-  .cr-change-icons {
-
-  }
-
+}
 
 @keyframes fadeIn {
-    0%{
+    0% {
         background-color: cornsilk;
         opacity: 0;
     }

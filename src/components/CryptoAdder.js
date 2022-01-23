@@ -35,8 +35,16 @@ export const CryptoAdder = ({addCoin}) => {
         }
     }
 
+    function handleKeyDown(e){
+        if(e.keyCode === 13){
+            handleAddCoin();
+            e.preventDefault();
+        }
+    }
+
     function handleInputChange(e){
         const value = e.target.value;
+
         setInput(value);
         setValidCoin(false);
         // NOTE: this check isn't fool proof, there's a
@@ -56,6 +64,7 @@ export const CryptoAdder = ({addCoin}) => {
                 type="text" 
                 placeholder="Enter Coin here" 
                 value={input}
+                onKeyDown={handleKeyDown}
                 onInput={handleInputChange}
                 >
 
