@@ -33,11 +33,12 @@ export function transformApiCoinToCoinObj(apiData){
 
 export function updatePriceOnAllcoins(coinList, apiData){
     return coinList.map( (coin, index) => {
-        const apiCoin = apiData[index].data;
+        const apiCoin = apiData[index];
         if(apiCoin){
             if(apiCoin.base === coin.symbolName){
-                let diff = coin.price - apiData[index].data.amount;
-                coin.price = apiData[index].data.amount;
+                let updatedPrice = parseFloat(apiCoin.amount);
+                let diff = coin.price - updatedPrice;
+                coin.price = updatedPrice;
                 coin.increasedPrice = diff < 0 ? true : false; 
             }
         }

@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { sortByProp } from "../util/util";
-import { BiDownArrow, BiUpArrow } from 'react-icons/bi'
+import { AiFillCaretUp, AiFillCaretDown } from 'react-icons/ai'
 import { CryptoCard } from "./CryptoCard";
 import "./List.css";
 import { IconContext } from "react-icons/lib";
@@ -86,7 +86,7 @@ export const List = ({coinObjArr}) => {
                 return (
                     <span className="cr-sort-icon">
                         <IconContext.Provider value={{className: 'cr-sort-icons'}}>
-                            {sortState ? <BiDownArrow /> : <BiUpArrow />  }
+                            {sortState ? <AiFillCaretUp /> : <AiFillCaretDown />  }
                         </IconContext.Provider>
                     </span>
                 )

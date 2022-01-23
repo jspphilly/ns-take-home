@@ -18,7 +18,7 @@ export const RefreshButton = ({refreshFunc}) => {
             
         }, 1000)
 
-        return () => clearTimeout(timerVal);
+        return () => clearTimeout(timer);
         
     })
 

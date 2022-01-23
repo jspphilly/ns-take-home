@@ -52,10 +52,10 @@ function App() {
 
   async function refreshList(){
     try{
-      const response = await getUpdateOnAllCoins(coinObjList);
-      const updatedCoinPrices = await response.json();
+      const updatedCoinPrices = await getUpdateOnAllCoins(coinObjList);
+
       setCoinObjList([
-        ...updatePriceOnAllcoins(updatedCoinPrices, coinObjList)
+        ...updatePriceOnAllcoins(coinObjList, updatedCoinPrices)
       ])
     } catch(error){
       console.log(error)
